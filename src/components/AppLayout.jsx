@@ -1,3 +1,6 @@
+import { useEffect, useState } from 'react'
+import { Sidebar } from './Sidebar'
+import { PatientSearchPage } from './PatientSearchPage'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import {
   faCalendar,
@@ -38,6 +41,11 @@ export function AppLayout() {
   }, [darkMode])
 
   return (
+    <div className="min-h-screen bg-slate-200 font-sans text-slate-900 transition-colors duration-200 dark:bg-slate-950 dark:text-slate-50">
+      <Sidebar collapsed={collapsed} darkMode={darkMode} onToggleDarkMode={() => setDarkMode((value) => !value)} />
+
+      <main className="ml-20 min-h-screen">
+        <PatientSearchPage />
     <div className="min-h-screen bg-slate-100 text-slate-900 transition-colors duration-200 dark:bg-slate-950 dark:text-slate-50">
       <Sidebar collapsed={collapsed} darkMode={darkMode} onToggleDarkMode={() => setDarkMode((value) => !value)} />
 
