@@ -1,3 +1,5 @@
+import {
+  faArrowLeft,
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import {
   faArrowLeft,
@@ -29,6 +31,14 @@ const secondaryNavigation = [
   { label: 'Profile', icon: faUser }
 ]
 
+export function Sidebar({ collapsed = true, darkMode, onToggleDarkMode }) {
+  return (
+    <aside className="fixed left-0 top-0 z-20 flex h-screen w-20 flex-col border-r border-slate-200 bg-white px-3 py-5 shadow-sm transition-all duration-200 dark:border-slate-800 dark:bg-slate-900">
+      <div className="mb-8 flex items-center justify-center px-2">
+        <div
+          className="h-10 w-10 rounded-xl bg-gradient-to-br from-cyan-300 via-indigo-300 to-purple-400 shadow-md"
+          aria-label="Logo"
+          title="Salos ERM"
 export function Sidebar({ collapsed, onToggleCollapse, darkMode, onToggleDarkMode }) {
   return (
     <aside
